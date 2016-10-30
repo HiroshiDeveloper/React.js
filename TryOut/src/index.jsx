@@ -6,6 +6,10 @@ import { Provider } from 'react-redux';
 import App from '../containers/App'
 import configureStore from '../store/configureStore'
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin()
+
 // 作成したreducerであるcounter関数を引数に指定してstoreを作成
 const store = configureStore()
 

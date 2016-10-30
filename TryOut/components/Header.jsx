@@ -1,10 +1,21 @@
 import React, { PropTypes, Component } from 'react'
+import { AppBar, IconButton } from 'material-ui'
+import FaceIcon from 'material-ui/svg-icons/action/face'
 
 class Header extends Component {
 	render() {
 	  	return (
 	    	<header className="header">
-		<h1 >ヘッダだYo</h1>
+			<AppBar 
+				title="This is Header"
+				iconElementRight={
+					<IconButton>
+						<FaceIcon />
+					</IconButton>
+				}
+				showMenuIconButton={false}
+			/>
+
 		</header>
 		)
 	}
