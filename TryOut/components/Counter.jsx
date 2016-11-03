@@ -4,6 +4,7 @@ import AddIconButton from 'material-ui/svg-icons/content/add-circle';
 import RemoveIconButton from 'material-ui/svg-icons/content/remove-circle';
 import {blue500, red500} from 'material-ui/styles/colors';
 
+// set the style
 const styles = {
 	icon: {
 	  	width: 48,
@@ -34,16 +35,19 @@ class Counter extends Component {
 		return (
 			<div>
 				<h2 style={styles.countSize}>count={value}</h2>
-				<IconButton tooltip="増加"
+				<IconButton tooltip="Increase"
 	      				iconStyle={styles.icon}
 		    			style={styles.blockSize}
-	  				onClick={actions.increment}>
+	  				
+					//event
+					onClick={actions.increment}>
 					<AddIconButton color={red500}/>
 				</IconButton>
 
-				<IconButton tooltip="減少"
+				<IconButton tooltip="Decrease"
 					iconStyle={styles.icon}
 					iconStyle={styles.icon}				
+					//event
 					onClick={actions.decrement}>
 					<RemoveIconButton color={blue500} />
 				</IconButton>

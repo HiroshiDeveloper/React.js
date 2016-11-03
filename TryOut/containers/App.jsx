@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from "react"
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Header from '../components/Header'
 import * as CounterActions from '../actions/counter'
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MyRawTheme from '../src/myThemeFile';
 
+import Header from '../components/Header'
+import Input from '../components/Input'
 import Counter from '../components/Counter'
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
        		return (
 			<div>
 				<Header />
+				<Input />
 				<Counter value={value} actions={actions} />
 			</div>
 		       )

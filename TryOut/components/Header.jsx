@@ -7,7 +7,7 @@ class Header extends Component {
 	  	return (
 	    	<header className="header">
 			<AppBar 
-				title="This is Header"
+				title="Scheduler"
 				iconElementRight={
 					<IconButton>
 						<FaceIcon />
