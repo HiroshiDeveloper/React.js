@@ -23,10 +23,12 @@ class App extends Component {
 	render() {
   		const { value, actions } = this.props;
        		return (
-			<div>
+			<div>	
 				<Header />
-				<Input />
-				<Counter value={value} actions={actions} />
+				<div className="mainbody">
+					<Input />
+					<Counter value={value} actions={actions} />
+				</div>
 			</div>
 		       )
 	}

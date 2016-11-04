@@ -19,9 +19,10 @@ class Input extends Component {
 	render(){
 		return(
 			<FormGroup>
-			<ControlLabel>Label</ControlLabel>
-				<DatePicker value={this.props.value} onChange={this.handleChange} />
-				<HelpBlock>Help</HelpBlock>
+				<ControlLabel>DATE</ControlLabel>
+				<DatePicker value={this.props.value} onChange={this.handleChange} /><br/>
+				<ControlLabel>TITLE</ControlLabel><br/>
+				<ControlLabel>DESCRIPTION</ControlLabel>
 			</FormGroup>
 		)
 	}
