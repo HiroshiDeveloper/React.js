@@ -11,3 +11,11 @@ body{
 .mainbody{
 	margin: 30px;
 }
+
+.rightText{
+	text-align: right;
+}
+
+.right{
+	float: right;
+}

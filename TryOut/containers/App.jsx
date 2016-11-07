@@ -13,11 +13,11 @@ import Counter from '../components/Counter'
 class App extends Component {
 	
 	static get childContextTypes() {
-		    return { muiTheme: PropTypes.object.isRequired };
+		return { muiTheme: PropTypes.object.isRequired };
 	}
 
 	getChildContext(){
-		      return {  muiTheme: getMuiTheme(MyRawTheme)};
+  		return {  muiTheme: getMuiTheme(MyRawTheme)};
 	}
 
 	render() {
