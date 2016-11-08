@@ -24,8 +24,19 @@ class Input extends Component {
 	}
 
 	insertData(){
-	
-	
+		insertData(e){
+		       	console.log("PASS")
+			this.context.request.postRequest({
+				url: 'http://yourUrl.com/someParam',
+				data: {
+					title: this.refs.title,
+					description: this.refs.description
+				},
+				endCallback: (err, req, res)=>{
+					//response from server
+				}
+			});
+		}
 	}
 
 	render(){
