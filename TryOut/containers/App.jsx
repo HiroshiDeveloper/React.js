@@ -8,6 +8,7 @@ import MyRawTheme from '../src/myThemeFile';
 
 import Header from '../components/Header'
 import InputSchedule from '../components/InputSchedule'
+import List from '../components/List'
 import Counter from '../components/Counter'
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
 				<Header />
 				<div className="mainbody">
 					<InputSchedule />
+					<List />
 					<Counter value={value} actions={actions} />
 				</div>
 			</div>

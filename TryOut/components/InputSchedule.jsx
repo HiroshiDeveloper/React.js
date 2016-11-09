@@ -19,15 +19,6 @@ class InputSchedule extends Component {
 		};
 		this.onChange = this.onChange.bind(this);
 	}  
-	
-	/*
-     	handleChange(value){
-		//value is an ISO String. 
-		this.setState({
-			value: value
-		});
-	}
-	*/
 
 	onChange(e) {
     		let state = {};
@@ -37,17 +28,10 @@ class InputSchedule extends Component {
   	}
 
 	insertData(e){
-		console.log("########")
-		
 		this.context.request.postRequest({
 			url: 'input.js',
-			data: this.state,
-			endCallback: (err, req, res)=>{
-				console.log("ERROR")
-				//response from server
-			}
+			data: this.state
 		});
-		
 	}
 
 	render(){
@@ -60,10 +44,10 @@ class InputSchedule extends Component {
 					<Grid>
 						<Row className="show-grid">
 							<Col xs={6} md={6}>
-								<FormControl type="text" name="title" ref="title" placeholder="title" onChange={this.onChange}/>
+								<DatePicker name="date" value={this.state.date} onChange={this.onChange}/>
 							</Col>
 							<Col xs={6} md={6}>
-								<DatePicker name="date" value={this.state.date} onChange={this.onChange}/>
+								<FormControl type="text" name="title" ref="title" placeholder="title" onChange={this.onChange}/>
 							</Col>
 						</Row>
 						<FormControl componentClass="textarea" name="description" ref="description" placeholder="description" onChange={this.onChange}/><br/>
