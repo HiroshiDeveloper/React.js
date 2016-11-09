@@ -16,6 +16,18 @@ body{
 	text-align: right;
 }
 
+.centerText{
+	text-align: center;
+}
+
 .right{
 	float: right;
+}
+
+.left{
+	float: left;
+}
+
+.subject{
+	font-size: 20px;
 }

@@ -7,7 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MyRawTheme from '../src/myThemeFile';
 
 import Header from '../components/Header'
-import Input from '../components/Input'
+import InputSchedule from '../components/InputSchedule'
 import Counter from '../components/Counter'
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
 			<div>	
 				<Header />
 				<div className="mainbody">
-					<Input />
+					<InputSchedule />
 					<Counter value={value} actions={actions} />
 				</div>
 			</div>
