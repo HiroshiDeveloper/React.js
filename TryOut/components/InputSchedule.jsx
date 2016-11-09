@@ -13,50 +13,60 @@ class InputSchedule extends Component {
 	constructor(props) {
 		super(props);
 	     	this.state = {
-			value: new Date().toISOString()
+			date: new Date().toISOString(),
+			title:"",
+			description:""
 		};
-		this.handleChange = this.handleChange.bind(this);
+		this.onChange = this.onChange.bind(this);
 	}  
-
+	
+	/*
      	handleChange(value){
 		//value is an ISO String. 
 		this.setState({
 			value: value
 		});
 	}
+	*/
+
+	onChange(e) {
+    		let state = {};
+	 	state[e.target.name] =  e.target.value;
+		this.setState(state);
+		console.dir(this.state);
+  	}
 
 	insertData(e){
-		console.log("INSERT")
+		console.log("########")
+		
 		this.context.request.postRequest({
 			url: 'input.js',
-			data: {
-				title: this.refs.title,
-				description: this.refs.description
-			},
+			data: this.state,
 			endCallback: (err, req, res)=>{
 				console.log("ERROR")
 				//response from server
 			}
 		});
+		
 	}
 
 	render(){
 		return(
-			<form className="form">
-				<FormGroup onSubmit={this.insertData}>
+			<form className="form" onSubmit={this.insertData}>
+				<FormGroup>
 					<div className="centerText">
 						<ControlLabel className="subject">Schedule</ControlLabel><br/>
 					</div>
 					<Grid>
 						<Row className="show-grid">
 							<Col xs={6} md={6}>
-								<FormControl type="text" ref="title" placeholder="title"/>
+								<FormControl type="text" name="title" ref="title" placeholder="title" onChange={this.onChange}/>
 							</Col>
 							<Col xs={6} md={6}>
-								<DatePicker value={this.state.value} onChange={this.handleChange}/>
+								<DatePicker name="date" value={this.state.date} onChange={this.onChange}/>
 							</Col>
 						</Row>
-						<FormControl componentClass="textarea" ref="description" placeholder="description"/><br/>
+						<FormControl componentClass="textarea" name="description" ref="description" placeholder="description" onChange={this.onChange}/><br/>
 					</Grid>
 					<Button bsStyle="info" className="right" type="submit">Add</Button>
 				</FormGroup>
